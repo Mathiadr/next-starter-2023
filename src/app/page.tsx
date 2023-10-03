@@ -1,3 +1,44 @@
+"use client"
+
+import Cart from "@/components/Cart";
+import PageTitle from "@/components/PageTitle";
+import ProductCard from "@/components/ProductCard";
+import ProductList from "@/components/ProductList";
+import { createProducts, productFaker } from "@/features/products/createProducts";
+import { Product } from "@/features/products/types";
+import { useEffect, useState } from "react";
+
 export default function Home() {
-  return <div>Kode her</div>
+  const [products, setProducts] = useState<Product[]>([])
+  const [cart, setCart] = useState<Product[]>([])
+
+  useEffect(() => {
+    const getProducts = () => {
+      const productList = Array.from(createProducts({ faker: productFaker, count: 10 }).values())
+      setProducts(productList)
+    }
+
+    getProducts()
+  }, [])
+  
+
+  
+
+  return (
+    <body>
+      <PageTitle />
+      <main>
+        <ProductList>
+          {products.map((product) => (
+            <ProductCard 
+            key={product.id}
+            {...product}/>
+          ))}
+        </ProductList>
+      </main>
+      <aside>
+        <Cart />
+      </aside>
+    </body>
+  )
 }
