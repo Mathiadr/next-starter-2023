@@ -25,8 +25,8 @@ export default function Home() {
   
 
   return (
-    <body>
-      <PageTitle />
+    <div className="mx-auto mt-8 w-full max-w-4xl gap-2">
+      <PageTitle title={"Products"}/>
       <main>
         <ProductList>
           {products.map((product) => (
@@ -39,6 +39,6 @@ export default function Home() {
       <aside>
         <Cart />
       </aside>
-    </body>
+    </div>
   )
 }
