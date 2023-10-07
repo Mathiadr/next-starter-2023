@@ -6,18 +6,13 @@ export type Product = {
     price: number
 }
 
-export type ProductCart = {
-    product: Product
+export type CartProduct = {
+    id: string
+    name: string
+    category: string
+    description: string
+    price: number
     amount: number
-    increaseAmount?: () => {} // might be () => void etc...
-    decreaseAmount?: () => {}
-}
-
-export type Cart = {
-    products: Map<string, ProductCart>
-
-    addProduct?: () => {}
-    deleteProduct?: () => {}
 }
 
 export type ProductFaker = {

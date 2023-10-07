@@ -11,7 +11,7 @@ function getRandomItem<T>(items: T[])  {
 
 const getRandomId = () => Math.random().toString(36).slice(2)
 
-const getRandomPrice = () => Math.floor((1 + Math.random()) * 100)
+const getRandomPrice = () => Math.floor((1 + Math.random()) * 10)
 
 export const productFaker: ProductFaker = {
     id: () => getRandomId(),
