@@ -9,10 +9,11 @@ export type Product = {
 export type CartProduct = {
     id: string
     name: string
-    category: string
-    description: string
     price: number
     amount: number
+
+    onChange?: (id: string, changeBy: number) => void
+    onDelete?: (id: string) => void
 }
 
 export type ProductFaker = {

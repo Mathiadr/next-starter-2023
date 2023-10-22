@@ -6,12 +6,11 @@ type ProductProps = {
     category: string
     description: string
     price: number
-    inCart?: boolean
     addToCart?: (id: string) => void
   }
 
   export default function ProductCard(params: ProductProps) {
-    const { id, name, category, description, price, inCart = false, addToCart } = params
+    const { id, name, category, description, price, addToCart } = params
 
     function handleAddToCart(){
       addToCart?.(id)

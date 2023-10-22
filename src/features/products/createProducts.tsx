@@ -1,8 +1,16 @@
 import { CreateProduct, Product, ProductFaker } from "./types"
 
-const dummyNames: string[] = ["Splash Juice", "Slap juice", "Coconut", "WomboNuts"]
+const dummyNames: string[] = ["Splash Juice", "Slap juice", "CocoButts", "WomboNuts", "Ultra Energikk", "Moscow Punch", "Peace Stachios", "Hokkaido Sake", "Voronezh Semechki", "Arbat Bliny"]
 
 const dummyCategories: string[] = ["Drinks", "Food", "Snacks"]
+
+const dummyDescriptions: string[] = [
+    "This enchanting potion promises to bring rainbows into your life with every drop. Guaranteed to make your dreams come true, this whimsical elixir is perfect for those seeking a touch of mythical wonder.",
+    "These revolutionary footwear items defy the laws of physics, allowing you to step lightly and float effortlessly above the ground. Perfect for escaping traffic jams or impressing friends at parties.",
+    "Ever wondered what your furry friend is thinking? Our Pet Translator Collar claims to translate your pet's thoughts into human language, providing you with hilarious insights into their daily musings. Communicate like never before with your beloved pet!",
+    "Illuminate your drinks with our Glow-in-the-Dark Ice Cubes! These mesmerizing cubes promise to turn any beverage into a dazzling light show. Perfect for adding a touch of magic to your parties or impressing guests with your glowing concoctions.",
+    "This lovable, miniature pachyderm fits right in your pocket, offering companionship and endless cuteness wherever you go. Ideal for those who dream of having a pet elephant without the space constraints."
+]
 
 function getRandomItem<T>(items: T[])  {
     const index = Math.floor(Math.random() * items.length)
@@ -17,7 +25,7 @@ export const productFaker: ProductFaker = {
     id: () => getRandomId(),
     name: () => getRandomItem(dummyNames),
     category: () => getRandomItem(dummyCategories),
-    description: () => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum fermentum sagittis. Quisque vel risus vitae risus vehicula lacinia at quis mi. Sed turpis libero, facilisis nec leo eget, ullamcorper viverra est. Maecenas tincidunt sollicitudin nisl, eget convallis lorem congue nec. Nunc facilisis, dui nec dignissim lobortis, ex eros euismod magna, non dictum tortor purus quis nulla. Donec tempus quis tellus non placerat. Quisque id leo odio. Cras malesuada, lectus a elementum pretium, sapien eros malesuada justo, viverra facilisis tellus libero et ex.",
+    description: () => getRandomItem(dummyDescriptions),
     price: () => getRandomPrice()
 }
 

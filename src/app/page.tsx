@@ -1,7 +1,7 @@
 "use client"
 
 import Cart from "@/components/Cart";
-import CartItem from "@/components/CartItem";
+import CartListItem from "@/components/CartListItem";
 import PageTitle from "@/components/PageTitle";
 import ProductCard from "@/components/ProductCard";
 import ProductList from "@/components/ProductList";
@@ -74,7 +74,7 @@ export default function Home() {
       <aside>
         <Cart total={sum}>
           {cart.map((item) => (
-            <CartItem 
+            <CartListItem 
             key={item.id}
             onDelete={handleDeleteFromCart}
             onChange={handleOnChange}

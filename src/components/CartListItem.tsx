@@ -1,18 +1,7 @@
-import { number } from "zod"
 import { Icons } from "./icons"
+import { CartProduct } from "@/features/products/types"
 
-export type CartItemProps = {
-    id: string
-    name: string
-    category: string
-    description: string
-    price: number
-    amount: number
-    onChange?: (id: string, changeBy: number) => void
-    onDelete?: (id: string) => void
-}
-
-export default function CartItem(props: CartItemProps){
+export default function CartListItem(props: CartProduct){
     const {id, name, price, amount, onChange, onDelete} = props
     
     const handleOnChange = (changeBy: number) => {
@@ -35,14 +24,14 @@ export default function CartItem(props: CartItemProps){
             </td>
             <td className="px-2 py-1 font-medium text-gray-900 dark:text-white flex flex-row items-center">
                 <button onClick={() => handleOnChange(1)}>
-                    <Icons.chevronLeft />
+                    <Icons.chevronLeft className="stroke-green-500"/>
                 </button>
                 <input type="number" 
                     className="h-6 w-6 text-xs [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none outline-none m-0 p-0" 
                     placeholder={`${amount}`}
                     onChange={(e) => handleOnChange(parseInt(e.currentTarget.value))} />
                 <button onClick={() => handleOnChange(-1)}>
-                    <Icons.chevronRight />
+                    <Icons.chevronRight className="stroke-red-500"/>
                     
                 </button>
             </td>
