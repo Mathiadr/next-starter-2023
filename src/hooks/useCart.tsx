@@ -1,4 +1,4 @@
-import { CartProduct, Product } from "@/features/products/types"
+import { CartProduct, Product } from "@/features/types"
 import { ChangeEvent, useEffect, useState } from "react"
 
 export function useCart(

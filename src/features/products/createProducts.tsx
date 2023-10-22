@@ -1,4 +1,4 @@
-import { CreateProduct, Product, ProductFaker } from "./types"
+import { CreateProduct, Product, ProductFaker } from "../types"
 
 const dummyNames: string[] = ["Splash Juice", "Slap juice", "CocoButts", "WomboNuts", "Ultra Energikk", "Moscow Punch", "Peace Stachios", "Hokkaido Sake", "Voronezh Semechki", "Arbat Bliny"]
 
@@ -17,7 +17,7 @@ function getRandomItem<T>(items: T[])  {
     return items[index]
 }
 
-const getRandomId = () => Math.random().toString(36).slice(2)
+export const getRandomId = () => Math.random().toString(36).slice(2)
 
 const getRandomPrice = () => Math.floor((1 + Math.random()) * 10)
 

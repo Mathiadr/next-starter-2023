@@ -1,5 +1,5 @@
 import { Icons } from "./icons"
-import { CartProduct } from "@/features/products/types"
+import { CartProduct } from "@/features/types"
 
 export default function CartListItem(props: CartProduct){
     const {id, name, price, amount, onChange, onDelete} = props

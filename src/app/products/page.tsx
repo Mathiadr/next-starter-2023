@@ -6,12 +6,12 @@ import PageTitle from "@/components/PageTitle";
 import ProductCard from "@/components/ProductCard";
 import ProductList from "@/components/ProductList";
 import { createProducts, productFaker } from "@/features/products/createProducts";
-import { CartProduct, Product } from "@/features/products/types";
+import { CartProduct, Product } from "@/features/types";
 import { useEffect, useState } from "react";
 import { GET } from "../api/products/route";
 import { useCart } from "@/hooks/useCart";
 
-export default function Home() {
+export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([])
   const {cart, addToCart, changeAmount, deleteFromCart} = useCart(products)
   const [total, setTotal] = useState(0)
